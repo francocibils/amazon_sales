@@ -22,7 +22,7 @@ def processing_sales(df, catalog, brand):
 
     # Total
     total_amazon_df = amazon_df.groupby('Date')[['Revenue', 'Quantity']].sum()
-    total_amazon_df['Product family'] = 'All Inova'
+    total_amazon_df['Product family'] = brand
     total_amazon_df = total_amazon_df.reset_index()
 
     # Group by date and family product
