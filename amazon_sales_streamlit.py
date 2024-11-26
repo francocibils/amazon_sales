@@ -67,6 +67,6 @@ if st.button('Process file'):
     st.download_button(
         label = "Download Excel file",
         data = output,
-        file_name = f"Amazon - {brand} visits - {date}.xlsx",
+        file_name = f"Amazon - {brand} sales - {date}.xlsx",
         mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
