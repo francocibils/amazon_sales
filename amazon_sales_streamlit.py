@@ -21,8 +21,8 @@ st.write('The date will be', date)
 brand = st.selectbox('Select brand', ('InovaMX', 'Sognare'))
 st.write('You selected', brand)
 
-catalog_inova = pd.read_excel(r'C:\Users\HP\OneDrive\Inova\05 - Ad Hoc Analysis\Amazon - Visitas\Amazon - Catalog - Inova.xlsx')
-catalog_sognare = pd.read_excel(r'C:\Users\HP\OneDrive\Inova\05 - Ad Hoc Analysis\Amazon - Visitas\Amazon - Catalog - Sognare.xlsx')
+catalog_inova = pd.read_excel(r'https://raw.githubusercontent.com/francocibils/amazon_visits/main/amazon_catalog_inova.xlsx', engine = 'openpyxl')
+catalog_sognare = pd.read_excel(r'https://raw.githubusercontent.com/francocibils/amazon_visits/main/amazon_catalog_sognare.xlsx', engine = 'openpyxl')
 
 if st.button('Process file'):
 
