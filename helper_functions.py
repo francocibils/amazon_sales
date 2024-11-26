@@ -6,10 +6,15 @@ def processing_sales(df, catalog, brand):
     brand = 'All ' + brand
 
     # Amazon dataframe
-    # Amazon dataframe
     amazon_df = pd.merge(df, catalog, left_on = 'SKU', right_on = 'SKU (AMAZON)', how = 'left')
+
+    # Change to correct data types
     amazon_df['Ventas de productos pedidos'] = amazon_df['Ventas de productos pedidos'].str.replace(r'[^\d.]', '', regex = True).astype(float)
     amazon_df['Ventas de productos pedidos - B2B'] = amazon_df['Ventas de productos pedidos - B2B'].str.replace(r'[^\d.]', '', regex = True).astype(float)
+    amazon_df['Total de artículos del pedido'] = amazon_df['Total de artículos del pedido'].astype(str).str.replace(r'[^\d.]', '', regex = True).astype(float)
+    amazon_df['Total de artículos del pedido -B2B'] = amazon_df['Total de artículos del pedido -B2B'].astype(str).str.replace(r'[^\d.]', '', regex = True).astype(float)
+
+    # Revenue and Quantity columns
     amazon_df['Revenue'] = amazon_df['Ventas de productos pedidos'] + amazon_df['Ventas de productos pedidos - B2B']
     amazon_df['Quantity'] = amazon_df['Total de artículos del pedido'] + amazon_df['Total de artículos del pedido -B2B']
     amazon_df = amazon_df[['Date', 'FAMILIA DE PRODUCTO', 'Revenue', 'Quantity']]
