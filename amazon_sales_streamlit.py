@@ -31,6 +31,7 @@ if st.button('Process file'):
     df['Date'] = pd.to_datetime(df['Date'])
     df = df.rename(columns = {'Ordered Product Sales': 'Ventas de productos pedidos', 
                               'Ordered Product Sales - B2B': 'Ventas de productos pedidos - B2B',
+                              'Ventas de productos pedidos: entre empresas': 'Ventas de productos pedidos - B2B',
                               'Total Order Items': 'Total de artículos del pedido',
                               'Total Order Items - B2B': 'Total de artículos del pedido -B2B',
                               '(Parent) ASIN': 'ASIN (parent)', 
