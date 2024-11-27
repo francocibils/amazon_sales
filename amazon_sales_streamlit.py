@@ -13,7 +13,12 @@ st.markdown("This app obtains 'Ordered Product Sales(- B2B)' and 'Total Order It
 raw = st.file_uploader('Upload Amazon Sellercentral file', type = ['csv'])
 
 if raw is not None:
-    df = pd.read_csv(raw)
+    try:
+        raw.seek(0)
+        df = pd.read_csv(raw)
+    except:
+        raw.seek(0)
+        df = pd.read_csv(raw, encoding = 'ISO-8859-1')
     st.success('File uploaded successfully.')
 
 date = st.text_input('Insert date in the YYYY-MM-DD format, such as 2024-07-26.')
