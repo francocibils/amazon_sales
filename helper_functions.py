@@ -33,7 +33,7 @@ def processing_sales(df, catalog, brand):
 
     # Define all possible products and channels
     all_days = sales_df['Date'].unique()
-    all_products = ['All Inova'] + catalog['FAMILIA DE PRODUCTO'].unique().tolist()
+    all_products = [brand] + catalog['FAMILIA DE PRODUCTO'].unique().tolist()
 
     # Create a MultiIndex DataFrame with all combinations of products and channels
     multi_index = pd.MultiIndex.from_product([all_days, all_products], names = ['Date', 'Product family'])
