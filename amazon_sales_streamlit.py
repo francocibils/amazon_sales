@@ -39,6 +39,7 @@ if st.button('Process file'):
                               'Ventas de productos pedidos: entre empresas': 'Ventas de productos pedidos - B2B',
                               'Total Order Items': 'Total de artículos del pedido',
                               'Total Order Items - B2B': 'Total de artículos del pedido -B2B',
+                              'Total de artículos del pedido: B2B': 'Total de artículos del pedido -B2B',
                               '(Parent) ASIN': 'ASIN (parent)', 
                               'Title': 'Titulo'})
     df = df.drop_duplicates(['ASIN (parent)', 'Date', 'Ventas de productos pedidos'])
